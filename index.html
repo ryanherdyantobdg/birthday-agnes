@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#120b22">
+  <title>Will You Go On A Date With Me? 💗</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="hearts"></div>
+  <main class="app">
+
+    <section class="screen active" id="screen-1">
+      <div class="eyebrow">A LITTLE QUESTION</div>
+      <h1>Hey, <span data-name>Kamu</span> ✨</h1>
+      <p class="lead">Ada satu hal yang ingin aku tanyakan...</p>
+      <div class="heart-big">♥</div>
+      <h2>Will you go on a date with me?</h2>
+      <div class="buttons">
+        <button class="btn yes" onclick="goTo(2)">YES! 💕</button>
+        <button class="btn no" id="noBtn">NO 😭</button>
+      </div>
+      <p class="tiny">*Jawab dengan jujur ya</p>
+    </section>
+
+    <section class="screen" id="screen-2">
+      <div class="confetti" id="confetti"></div>
+      <div class="eyebrow">ONE STEP CLOSER</div>
+      <h1 class="glow">YAY. ✨</h1>
+      <p class="lead">Aku senang kamu bilang YES.</p>
+      <div class="heart-big pulse">♥</div>
+      <h2>Let’s make it a date.</h2>
+      <button class="circle-btn" onclick="goTo(3)">↓</button>
+    </section>
+
+    <section class="screen" id="screen-3">
+      <div class="eyebrow">DETAIL 1 OF 2</div>
+      <h1>Kapan kita bertemu?</h1>
+      <p class="lead">Tanggalnya sudah ditentukan untuk kita.</p>
+      <div class="cards single" id="dateChoices">
+        <button class="choice selected" data-value="Sabtu, 29 Agustus 2026" onclick="selectChoice(this,'dateChoices')">📅<strong>Sabtu</strong><span>29 Agustus 2026</span></button>
+      </div>
+      <button class="btn next" onclick="nextFromDates()">Lanjut →</button>
+    </section>
+
+    <section class="screen" id="screen-4">
+      <div class="eyebrow">DETAIL 2 OF 2</div>
+      <h1>Mau ke mana?</h1>
+      <p class="lead">Untuk malam itu, kita dinner bersama.</p>
+      <div class="cards single" id="placeChoices">
+        <button class="choice selected" data-value="Dinner 🍽️" onclick="selectChoice(this,'placeChoices')">🍽️<strong>Dinner</strong><span>Makan berdua</span></button>
+      </div>
+      <p class="fixed-detail">🕗 Jam 20:00 WIB</p>
+      <button class="btn next" onclick="nextFromPlaces()">Lihat rencana 💌</button>
+    </section>
+
+    <section class="screen" id="screen-5">
+      <div class="eyebrow">ALMOST THERE</div>
+      <h1>Ready?</h1>
+      <p class="lead">Tinggal satu langkah lagi.</p>
+      <div class="summary">
+        <div><span>📅</span><p>Tanggal yang dipilih<strong id="summaryDate">-</strong></p></div>
+        <div><span>📍</span><p>Tempat yang dipilih<strong id="summaryPlace">-</strong></p></div>
+        <div><span>🕖</span><p>Waktu<strong>20:00 WIB</strong></p></div>
+      </div>
+      <button class="btn yes" onclick="finish()">CONFIRM DATE 💗</button>
+      <button class="text-btn" onclick="goTo(3)">Ubah pilihan</button>
+    </section>
+
+    <section class="screen final" id="screen-6">
+      <div class="eyebrow">IT'S OFFICIAL 💕</div>
+      <h1 class="glow">IT'S A DATE! 💕</h1>
+      <p class="lead">Aku nggak sabar bertemu kamu, <span data-name>Kamu</span>.</p>
+      <div class="summary">
+        <div><span>📅</span><p>Tanggal<strong id="finalDate">-</strong></p></div>
+        <div><span>🕖</span><p>Waktu<strong>20:00 WIB</strong></p></div>
+        <div><span>📍</span><p>Tempat<strong id="finalPlace">-</strong></p></div>
+      </div>
+      <p class="closing">Sampai jumpa. 🤎</p>
+      <div class="heart-small">♥</div>
+      <p class="made">Made with ♥ for someone special</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
